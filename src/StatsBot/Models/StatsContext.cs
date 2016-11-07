@@ -9,7 +9,7 @@ namespace StatsBot.Models
 
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			// If you're arrived here after trying to run Update-Database
+			// If you've arrived here after trying to run Update-Database
 			// Powershell: $env:DBPATH="R:\stats.db"; Update-Database
 			// The file will be created if it does not already exist
 
