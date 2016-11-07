@@ -5,8 +5,8 @@ Currently keeps track of:
 - All messages
 
 Providing:
-- How many messsages a user has sent
-- How many times a term has been said in all tracked messages.
+- How many messages a user has sent
+- How many times a term has been said in all tracked messages
 
 # Setup
 - Ensure you have the latest version of [.NET Core SDK](https://www.microsoft.com/net/core#windows)
