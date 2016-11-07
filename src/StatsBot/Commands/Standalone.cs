@@ -17,16 +17,16 @@ namespace StatsBot.Commands
 			_client = client;
 		}
 
-		[Command("halp"), Alias("help"), Summary("Get a list of commands")]
+		[Command("halp"), Alias("help"), Summary("Get a list of commands.")]
 		public async Task HalpMe()
 		{
 			await ReplyAsync($":weary: :weary: **HALP ME** :weary: :weary:");
-			await ReplyAsync($"**wc** [words...] :arrow_forward: Count occurences of words seperated by spaces. Maximum of 10 words.");
+			await ReplyAsync($"**wc** [words...] :arrow_forward: Count occurences of words separated by spaces. Maximum of 10 words.");
 			await ReplyAsync($"**mc** [mentions...] :arrow_forward: Count messages sent by specified users. Maximum of 10 users.");
 			await ReplyAsync($"**ar** [mentions...] :arrow_forward: Check if users specified are cucks. Maximum of 5 users.");
 		}
 
-		[Command("arrating"), Alias("ar"), Summary("Find how far into the Trump zone someone is")]
+		[Command("arrating"), Alias("ar"), Summary("Find how far into the Trump zone someone is.")]
 		public async Task AltRightRating(params string[] mentions)
 		{
 			var userIds = Context.Message.MentionedUserIds.Where(id => id != Context.Client.CurrentUser.Id).ToList();
@@ -49,12 +49,11 @@ namespace StatsBot.Commands
 				var user = await Context.Channel.GetUserAsync(userId);
 
 				// Max 100 because I'm lazy
-				if (count > 100)
-				{
-					count = 100;
-				}
+				if (count > 100) count = 100;
+
 				// Interval is 10, break into ranges
 				int range = (count - 1) / 10;
+
 				switch (range)
 				{
 					case 0:
@@ -110,7 +109,7 @@ namespace StatsBot.Commands
 								where s.Channel_Id == Context.Channel.Id
 								select s;
 
-				int count = sightings.Count();
+				var count = sightings.Count();
 
 				switch (count)
 				{
@@ -154,7 +153,7 @@ namespace StatsBot.Commands
 						await ReplyAsync($":x: I've never seen **{user.Username}** send a message before.");
 						break;
 					case 1:
-						await ReplyAsync($":one: I've seen **{user.Username}** only sent 1 message.");
+						await ReplyAsync($":one: I've seen **{user.Username}** only send 1 message.");
 						break;
 					default:
 						await ReplyAsync($":white_check_mark: I've seen **{user.Username}** send **{count}** messages.");
