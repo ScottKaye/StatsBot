@@ -17,6 +17,15 @@ namespace StatsBot.Commands
 			_client = client;
 		}
 
+        [Command("halp"), Alias("help"), Summary("Get a list of commands")]
+        public async Task HalpMe()
+        {
+            await ReplyAsync($":weary: :weary: **HALP ME** :weary: :weary: ", true);
+            await ReplyAsync($"**wc word1 word2**:arrow_forward: Count occurences of words seperated by spaces. Maximum of 10 words");
+            await ReplyAsync($"**mc user1 user2**:arrow_forward: Count messages sent by specified users. Maximum of 10 users/");
+            await ReplyAsync($"**ar user1 user2**:arrow_forward: Check if users specified are cucks. Maximum of 5 users.");
+        }
+
         [Command("arrating"), Alias("ar"), Summary("Find how far into the Trump zone someone is")]
         public async Task AltRightRating(params string[] mentions)
         {
