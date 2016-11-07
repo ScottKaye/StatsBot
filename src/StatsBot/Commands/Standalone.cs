@@ -41,7 +41,6 @@ namespace StatsBot.Commands
 			{
 				var cuckSightings = from s in _stats.Messages
 									where s.Author_Id == userId
-									where s.Channel_Id == Context.Channel.Id
 									where s.Content.Contains("cuck") || s.Content.Contains("trump")
 									select s;
 
