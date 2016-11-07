@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "StatsBot": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DBPATH": "R:\\stats.db"
+      }
+    }
+  }
+}
