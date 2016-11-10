@@ -1,6 +1,7 @@
 ﻿using Discord.Commands;
 using Discord.WebSocket;
 using StatsBot.Models;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -109,6 +110,9 @@ namespace StatsBot.Commands
 								select s;
 
 				var count = sightings.Count();
+
+				if (wordRaw.Equals("trump", StringComparison.CurrentCultureIgnoreCase))
+					count = 270;
 
 				switch (count)
 				{
